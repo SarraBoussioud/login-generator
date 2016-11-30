@@ -37,5 +37,9 @@ public class LoginGeneratorTest {
         String jral2 = loginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
         Assert.assertEquals(jral2, "JRAL2");
         Assert.assertEquals(true, loginService.loginExists("JRAL2"));
+
+        String login = loginGenerator.generateLoginForNomAndPrenom("Du", "Paul");
+        Assert.assertEquals("PDU", login);
+        Assert.assertEquals(true, loginService.loginExists("PDU"));
     }
 }
